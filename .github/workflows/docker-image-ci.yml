@@ -25,13 +25,13 @@ jobs:
     - name: Build and push kinoservice_app
       uses: docker/build-push-action@v5
       with:
-        context: "{{defaultContext}}:KinoServiceApp"
+        context: ./kinoservice_app
         push: true
         tags: iwannadocontainerstuff/kinoservice_app:${{ github.run_number }}.${{ github.run_attempt }},iwannadocontainerstuff/kinoservice_app:latest
 
     - name: Build and push db
       uses: docker/build-push-action@v5
       with:
-        context: "{{defaultContext}}:KinoServiceDB"
+        context: ./kinoservice_db
         push: true
         tags: iwannadocontainerstuff/kinoservice_db:${{ github.run_number }}.${{ github.run_attempt }},iwannadocontainerstuff/kinoservice_db:latest
